@@ -155,7 +155,17 @@ while gameRun:
     if np.sum(boardStatus==0)==0:
         remis=True
     
-    if (checkWin(boardStatus,1) or checkWin(boardStatus,-1))or(remis):
+    if remis:
+        player1.send(0)
+        player2.send(0)
+        turnOnPlayer,boardStatus,remis=newGame(player1,player2) 
+        gameCounter+=1
+        if gameCounter>=numOfGames:
+            gameRun=False
+            player1.send(-20)
+            player2.send(-20)
+            
+    if (checkWin(boardStatus,1) or checkWin(boardStatus,-1)):        
         if checkWin(boardStatus,1):
             print('Player 1 won the game!!!')
             player1.send(1)
@@ -170,7 +180,7 @@ while gameRun:
             gameRun=False
             player1.send(-20)
             player2.send(-20)
-    
+
     
 
 listener.close()

@@ -21,8 +21,8 @@ board randomly let one player start by sending him the boardStatus np.array: (em
 
 #game loop
 board waits for this player to respond.
-response could be:
-int: 1-7  #move of the player
+response could be: \n
+int: 1-7  #move of the player \n
 int: -10  #Player wants to end the whole session
 
 boards checks input from player and checks if the move is legit.

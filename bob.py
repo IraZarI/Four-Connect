@@ -7,21 +7,6 @@ Created on Mon Feb 27 12:10:25 2017
 """
 
 
-#import gc
-##import keras
-#from keras.models import Sequential, Model
-##from keras.optimizers import SGD
-#from keras.regularizers import l2,l1 #, activity_l2,activity_l1
-#from keras.layers import Dense, Input, Dropout, Activation
-#from keras.layers.advanced_activations import LeakyReLU,PReLU, ELU,SReLU
-#from keras.layers.recurrent import LSTM
-#from keras.engine.topology import Merge
-#from keras.callbacks import EarlyStopping
-#from keras import backend as K
-#from keras.callbacks import ModelCheckpoint
-#from keras.layers.convolutional import Conv1D
-#from keras.layers.core import Flatten
-#from scipy.stats.mstats import zscore
 from multiprocessing.connection import Client
 import numpy as np
 
@@ -32,22 +17,6 @@ conn = Client(address, authkey=b'secret password')
 errorCounter=0
 winCounter=0
 
-#from itertools import compress
-
-#import tensorflow as tf
-#
-##Misc Imports
-#import h5py
-##import yaml
-#import scipy.io as io
-
-#import random
-#import sys
-#import time
-#import platform
-#import seq2seq
-#from seq2seq.models import SimpleSeq2Seq
-#from seq2seq.models import Seq2Seq as SS
 
 def checkLeg(boardStatus,move):
     legit=False
@@ -86,7 +55,3 @@ while True:
         elif msg==-10:
             conn.close()
             break
-#conn.send('close')
-# can also send arbitrary objects:
-# conn.send(['a', 2.5, None, int, sum])
-#conn.close()
